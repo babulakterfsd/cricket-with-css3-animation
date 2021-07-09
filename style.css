@@ -1,0 +1,63 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* basic css styles */
+
+.bat {
+    transition: 0.3s;
+    width: 350px;
+    animation: hit .5s linear 1.5s;
+}
+
+.ball {
+    position: absolute;
+    left: 101%;
+    top: 0;
+    width: 55px;
+    transition: transform 0.3s;
+    animation: bowl 1.5s ease-in .45s, afterhit 1.5s ease-out 1.95s;
+}
+
+/* animations */
+@keyframes bowl {
+     0% {
+         top: 0;
+    }
+    50% {
+         top: 330px;
+         left: 50%;
+         transform: rotateZ(100deg);
+    }
+     100% {
+         top: 250px;
+         left: 23%;
+         transform: rotateZ(100deg);
+    }
+}
+
+@keyframes hit {
+     0% {
+         transform: rotate(0deg);
+    }
+     100% {
+         transform-origin: top right;
+         transform: rotate(-70deg);
+    }
+}
+
+ @keyframes afterhit {
+     0% {
+         top: 270px;
+         left: 30%;
+         transform: rotateZ(100deg);
+    }
+     100% {
+         top: 0px;
+         left: 101%;
+         transform: rotateZ(100deg);
+    }
+}
